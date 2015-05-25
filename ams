@@ -1,0 +1,48 @@
+using System; 
+2 using System.Collections.Generic; 
+3 using System.Linq; 
+4 using System.Text; 
+5 using System.Threading.Tasks; 
+6 
+ 
+7 namespace ConsoleApplication16 
+8 { 
+9     class Program 
+10     { 
+11         static void Main(string[] args) 
+12         { 
+13             int yuzler, onlar, birler, x, sonuc; 
+14              
+15             for (int i = 100; i < 999;i++ ) 
+16             { 
+17                 yuzler = (i / 100); 
+18                 x = i - (yuzler * 100); // yüzler basamağını çıkarıp sayıyı iki basamaklı hale indiriyoruz 
+19                 if (x >= 10){ //onlar basamağı 0 dan büyük ise 
+20                     onlar = (x / 10); 
+21                     birler = x - (onlar * 10); 
+22                     sonuc = (yuzler * yuzler * yuzler) + (onlar * onlar * onlar) + (birler * birler * birler); 
+23                     if (i == sonuc) 
+24                     { 
+25                         Console.WriteLine(i + "=" + sonuc + " Armstrong Sayı!"); 
+26 
+ 
+27                     } 
+28                     else { Console.WriteLine(i + "=" + sonuc + " Armstrong Sayı Değil!"); } 
+29                 } 
+30                 else{ //onlar basamağı 0 ise 
+31                     onlar = 0; 
+32                     birler = x - (onlar * 10); 
+33                     sonuc = (yuzler * yuzler * yuzler) + (onlar * onlar * onlar) + (birler * birler * birler); 
+34                     if (i == sonuc) 
+35                     { 
+36                         Console.WriteLine(i + "=" + sonuc + " Armstrong Sayı!"); 
+37 
+ 
+38                     } 
+39                     else { Console.WriteLine(i + "=" + sonuc + " Armstrong Sayı Değil!"); } 
+40                 } 
+41             } 
+42             Console.ReadLine(); 
+43         } 
+44     } 
+45 } 
